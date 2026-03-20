@@ -454,6 +454,24 @@
     .orgcom-role { font-size: 12px; font-weight: 500; color: var(--blue); margin-bottom: 2px; }
     .orgcom-dept { font-size: 11px; color: var(--text-muted); line-height: 1.4; }
 
+    /* ── MINISYMPOSIUM ── */
+    .mini-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start;
+    }
+    @media (max-width: 700px) { .mini-grid { grid-template-columns: 1fr; } }
+
+    .mini-steps { display: flex; flex-direction: column; gap: 18px; }
+    .mini-step  { display: flex; gap: 16px; align-items: flex-start; }
+    .mini-step-num {
+      font-family: 'Lexend', sans-serif; font-size: 22px; font-weight: 700;
+      color: var(--blue-light); background: var(--blue);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text; opacity: 0.25;
+      min-width: 36px; line-height: 1.2;
+    }
+    .mini-step h4 { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+    .mini-step p  { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
     /* ── UTILITY ── */
     .text-center { text-align: center; }
     .mt-4  { margin-top: 16px; }
