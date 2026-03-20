@@ -92,23 +92,32 @@
 
     /* ── HERO ── */
     .hero {
-      background:
-        linear-gradient(to bottom, rgba(5,20,60,0.30) 0%, rgba(5,20,60,0.20) 100%),
-        url('images/Gemini_Generated_Image_5akcfo5akcfo5akc.png') center 40% / cover no-repeat;
       color: var(--white);
       padding: 72px 0 60px;
       position: relative; overflow: hidden;
+      /* No background here — handled by the pseudo element for parallax */
     }
-    .hero h1, .hero h2 { text-shadow: 0 2px 16px rgba(0,0,0,0.6); }
-    .hero-tag { text-shadow: 0 1px 8px rgba(0,0,0,0.5); }
+    /* Parallax background layer */
+    .hero::after {
+      content: '';
+      position: absolute; inset: -30% 0;
+      background: url('images/iiti_campus_bg.png') center 40% / cover no-repeat;
+      z-index: 0;
+      will-change: transform;
+      transform: translateY(var(--parallax-y, 0px));
+    }
+    /* Gradient overlay for text readability — dark on left, transparent on right */
     .hero::before {
-      content: '∂ ∇ ∫ Σ';
-      position: absolute; right: -20px; top: 20px;
-      font-size: 140px; font-family: 'Lexend', serif;
-      color: rgba(255,255,255,0.04); line-height: 1;
-      letter-spacing: 10px; pointer-events: none;
-      font-weight: 700;
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(to right,  rgba(5,15,45,0.72) 0%, rgba(5,15,45,0.45) 55%, rgba(5,15,45,0.15) 100%),
+        linear-gradient(to bottom, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.25) 100%);
+      z-index: 1;
     }
+    .hero-inner { position: relative; z-index: 2; }
+    .hero h1, .hero h2 { text-shadow: 0 2px 18px rgba(0,0,0,0.55); }
+    .hero-tag { text-shadow: 0 1px 8px rgba(0,0,0,0.4); }
     .hero-inner { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center; }
     @media (max-width: 700px) { .hero-inner { grid-template-columns: 1fr; } }
 
