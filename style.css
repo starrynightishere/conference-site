@@ -57,7 +57,8 @@
       display: flex; align-items: center; gap: 10px;
       font-family: 'Lexend', sans-serif; font-weight: 600;
       font-size: 17px; color: var(--blue); text-decoration: none;
-      margin-right: auto; white-space: nowrap;
+      margin-right: 80px; white-space: nowrap;
+      
     }
     .navbar-logo span { font-weight: 300; color: var(--text-muted); font-size: 14px; margin-left: 4px; }
     .nav-links { display: flex; gap: 2px; list-style: none; }
