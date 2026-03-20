@@ -93,14 +93,14 @@
     /* ── HERO ── */
     .hero {
       background:
-        linear-gradient(135deg, rgba(10,31,92,0.52) 0%, rgba(0,87,168,0.42) 55%, rgba(14,134,212,0.32) 100%),
-        url('images/iit_campus.jpeg') center center / cover no-repeat;
+        linear-gradient(to bottom, rgba(5,20,60,0.30) 0%, rgba(5,20,60,0.20) 100%),
+        url('images/Gemini_Generated_Image_5akcfo5akcfo5akc.png') center 40% / cover no-repeat;
       color: var(--white);
       padding: 72px 0 60px;
       position: relative; overflow: hidden;
     }
-    .hero h1, .hero h2 { text-shadow: 0 2px 12px rgba(0,0,0,0.45); }
-    .hero-tag { text-shadow: 0 1px 6px rgba(0,0,0,0.3); }
+    .hero h1, .hero h2 { text-shadow: 0 2px 16px rgba(0,0,0,0.6); }
+    .hero-tag { text-shadow: 0 1px 8px rgba(0,0,0,0.5); }
     .hero::before {
       content: '∂ ∇ ∫ Σ';
       position: absolute; right: -20px; top: 20px;
