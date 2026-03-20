@@ -98,3 +98,10 @@ function switchTabById(tabId) {
   const btn = document.querySelector('.orgcom-tab[data-tab="' + tabId + '"]');
   if (btn) switchTab(btn, tabId);
 }
+// ── Hero parallax
+const heroEl = document.querySelector('.hero');
+if (heroEl) {
+  window.addEventListener('scroll', () => {
+    heroEl.style.setProperty('--parallax-y', window.scrollY * 0.35 + 'px');
+  }, { passive: true });
+}
