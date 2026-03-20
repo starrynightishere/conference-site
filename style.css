@@ -92,11 +92,15 @@
 
     /* ── HERO ── */
     .hero {
-      background: linear-gradient(135deg, #0a1f5c 0%, #0057a8 55%, #0e86d4 100%);
+      background:
+        linear-gradient(135deg, rgba(10,31,92,0.52) 0%, rgba(0,87,168,0.42) 55%, rgba(14,134,212,0.32) 100%),
+        url('images/iit_campus.jpeg') center center / cover no-repeat;
       color: var(--white);
       padding: 72px 0 60px;
       position: relative; overflow: hidden;
     }
+    .hero h1, .hero h2 { text-shadow: 0 2px 12px rgba(0,0,0,0.45); }
+    .hero-tag { text-shadow: 0 1px 6px rgba(0,0,0,0.3); }
     .hero::before {
       content: '∂ ∇ ∫ Σ';
       position: absolute; right: -20px; top: 20px;
@@ -444,33 +448,15 @@
     }
     .orgcom-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
     .orgcom-avatar {
-      width: 110px; height: 110px; border-radius: 50%;
+      width: 56px; height: 56px; border-radius: 50%;
       margin: 0 auto 12px;
       background: var(--blue-light); color: var(--blue);
       display: flex; align-items: center; justify-content: center;
-      font-family: 'Lexend', sans-serif; font-size: 36px; font-weight: 600;
+      font-family: 'Lexend', sans-serif; font-size: 16px; font-weight: 600;
     }
     .orgcom-name { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 3px; }
     .orgcom-role { font-size: 12px; font-weight: 500; color: var(--blue); margin-bottom: 2px; }
     .orgcom-dept { font-size: 11px; color: var(--text-muted); line-height: 1.4; }
-
-    /* ── MINISYMPOSIUM ── */
-    .mini-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start;
-    }
-    @media (max-width: 700px) { .mini-grid { grid-template-columns: 1fr; } }
-
-    .mini-steps { display: flex; flex-direction: column; gap: 18px; }
-    .mini-step  { display: flex; gap: 16px; align-items: flex-start; }
-    .mini-step-num {
-      font-family: 'Lexend', sans-serif; font-size: 22px; font-weight: 700;
-      color: var(--blue-light); background: var(--blue);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text; opacity: 0.25;
-      min-width: 36px; line-height: 1.2;
-    }
-    .mini-step h4 { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
-    .mini-step p  { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
 
     /* ── UTILITY ── */
     .text-center { text-align: center; }
@@ -483,8 +469,6 @@
     .hero-stats   { animation: fadeUp 0.6s 0.2s ease both; }
 
     img.orgcom-avatar {
-      width: 110px; height: 110px;
-      object-fit: cover;
-      object-position: center 20%;
-      display: block;
-    }
+    object-fit: cover;
+    object-position: top;
+  }
