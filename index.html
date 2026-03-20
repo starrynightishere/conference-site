@@ -27,7 +27,8 @@
           <ul class="dropdown-menu">
             <li><a href="#" onclick="openCommitteeModal('patron');return false;">Patron</a></li>
             <li><a href="#" onclick="openCommitteeModal('conveners');return false;">Conveners</a></li>
-            <li><a href="#" onclick="openCommitteeModal('local');return false;">Core Organizing Team</a></li>
+            <li><a href="#" onclick="openCommitteeModal('core-organizing');return false;">Core Organizing Team</a></li>
+            <li><a href="#" onclick="openCommitteeModal('local-organizing');return false;">Local Organizing Team</a></li>
           </ul>
         </li>
         <li><a href="#dates">Dates</a></li>
@@ -561,11 +562,12 @@
   <div class="orgcom-modal" id="orgcomModal" role="dialog" aria-modal="true" aria-labelledby="orgcomTitle">
     <button class="orgcom-close" onclick="closeCommitteeModal()" aria-label="Close">✕</button>
     <div class="orgcom-tabs">
-      <button class="orgcom-tab active" data-tab="patron"   onclick="switchTab(this,'patron')">Patron</button>
-      <button class="orgcom-tab"        data-tab="conveners" onclick="switchTab(this,'conveners')">Conveners</button>
-      <button class="orgcom-tab"        data-tab="local"    onclick="switchTab(this,'local')">Core Organising Team</button>
+      <button class="orgcom-tab active" data-tab="patron"          onclick="switchTab(this,'patron')">Patron</button>
+      <button class="orgcom-tab"        data-tab="conveners"        onclick="switchTab(this,'conveners')">Conveners</button>
+      <button class="orgcom-tab"        data-tab="core-organizing"  onclick="switchTab(this,'core-organizing')">Core Organizing Team</button>
+      <button class="orgcom-tab"        data-tab="local-organizing" onclick="switchTab(this,'local-organizing')">Local Organizing Team</button>
     </div>
- 
+
     <!-- Patron -->
     <div class="orgcom-panel active" id="panel-patron">
       <div class="orgcom-section-label">Patron</div>
@@ -578,8 +580,8 @@
         </div>
       </div>
     </div>
- 
-    <!-- conveners -->
+
+    <!-- Conveners -->
     <div class="orgcom-panel" id="panel-conveners">
       <div class="orgcom-section-label">Conveners</div>
       <div class="orgcom-grid">
@@ -592,40 +594,89 @@
         <div class="orgcom-card">
           <img class="orgcom-avatar" src="images/vinay_k_gupta.jpg" alt="Dr. Vinay Kumar Gupta" onerror="this.outerHTML='<div class=\'orgcom-avatar\'>VG</div>'">
           <div class="orgcom-name">Dr. Vinay Kumar Gupta</div>
-          <div class="orgcom-role">Co-convener, ICAMM 2026</div>
+          <div class="orgcom-role">Co-Convener, ICAMM 2026</div>
           <div class="orgcom-dept">Dept. of Mathematics, IIT Indore</div>
         </div>
       </div>
     </div>
- 
-    <!-- Core Organising Team -->
-    <div class="orgcom-panel" id="panel-local">
-      <div class="orgcom-section-label">Core Organising Team</div>
+
+    <!-- Core Organizing Team -->
+    <div class="orgcom-panel" id="panel-core-organizing">
+      <div class="orgcom-section-label">Core Organizing Team</div>
       <div class="orgcom-grid">
+        <div class="orgcom-card">
+          <img class="orgcom-avatar" src="images/santanu_m.jpeg" alt="Dr. Santanu Manna" onerror="this.outerHTML='<div class=\'orgcom-avatar\'>SM</div>'">
+          <div class="orgcom-name">Dr. Santanu Manna</div>
+          <div class="orgcom-role">Convener, ICAMM 2026</div>
+          <div class="orgcom-dept">Dept. of Mathematics, IIT Indore</div>
+        </div>
+        <div class="orgcom-card">
+          <img class="orgcom-avatar" src="images/vinay_k_gupta.jpg" alt="Dr. Vinay Kumar Gupta" onerror="this.outerHTML='<div class=\'orgcom-avatar\'>VG</div>'">
+          <div class="orgcom-name">Dr. Vinay Kumar Gupta</div>
+          <div class="orgcom-role">Co-Convener, ICAMM 2026</div>
+          <div class="orgcom-dept">Dept. of Mathematics, IIT Indore</div>
+        </div>
         <div class="orgcom-card">
           <img class="orgcom-avatar" src="images/sandeep_c.png" alt="Dr. Sandeep Chaudhary" onerror="this.outerHTML='<div class=\'orgcom-avatar\'>SS</div>'">
           <div class="orgcom-name">Dr. Sandeep Chaudhary</div>
-                    <div class="orgcom-dept">Dept. of Civil Engineering, IIT Indore</div>
+          <div class="orgcom-dept">Dept. of Civil Engineering, IIT Indore</div>
         </div>
         <div class="orgcom-card">
           <img class="orgcom-avatar" src="images/parimal_kar.jpg" alt="Dr. Parimal Kar" onerror="this.outerHTML='<div class=\'orgcom-avatar\'>PK</div>'">
           <div class="orgcom-name">Dr. Parimal Kar</div>
-                    <div class="orgcom-dept">Dept. of Biosciences and Biomedical Engineering, IIT Indore</div>
+          <div class="orgcom-dept">Dept. of Biosciences and Biomedical Engineering, IIT Indore</div>
         </div>
         <div class="orgcom-card">
           <img class="orgcom-avatar" src="images/abhirup_d.png" alt="Dr. Abhirup Datta" onerror="this.outerHTML='<div class=\'orgcom-avatar\'>AK</div>'">
           <div class="orgcom-name">Dr. Abhirup Datta</div>
-                    <div class="orgcom-dept">Dept. of Astronomy, Astrophysics and Space Engineering, IIT Indore</div>
+          <div class="orgcom-dept">Dept. of Astronomy, Astrophysics and Space Engineering, IIT Indore</div>
         </div>
         <div class="orgcom-card">
           <img class="orgcom-avatar" src="images/aman_k.jpeg" alt="Dr. Aman Khurana" onerror="this.outerHTML='<div class=\'orgcom-avatar\'>AK</div>'">
           <div class="orgcom-name">Dr. Aman Khurana</div>
-                    <div class="orgcom-dept">Dept. of Mechanical Engineering, IIT Indore</div>
+          <div class="orgcom-dept">Dept. of Mechanical Engineering, IIT Indore</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Local Organizing Team -->
+    <div class="orgcom-panel" id="panel-local-organizing">
+      <div class="orgcom-section-label">Local Organizing Team</div>
+      <div class="orgcom-grid">
+        <div class="orgcom-card orgcom-card--placeholder">
+          <div class="orgcom-avatar">?</div>
+          <div class="orgcom-name">To Be Announced</div>
+          <div class="orgcom-dept">IIT Indore</div>
+        </div>
+        <div class="orgcom-card orgcom-card--placeholder">
+          <div class="orgcom-avatar">?</div>
+          <div class="orgcom-name">To Be Announced</div>
+          <div class="orgcom-dept">IIT Indore</div>
+        </div>
+        <div class="orgcom-card orgcom-card--placeholder">
+          <div class="orgcom-avatar">?</div>
+          <div class="orgcom-name">To Be Announced</div>
+          <div class="orgcom-dept">IIT Indore</div>
+        </div>
+        <div class="orgcom-card orgcom-card--placeholder">
+          <div class="orgcom-avatar">?</div>
+          <div class="orgcom-name">To Be Announced</div>
+          <div class="orgcom-dept">IIT Indore</div>
+        </div>
+        <div class="orgcom-card orgcom-card--placeholder">
+          <div class="orgcom-avatar">?</div>
+          <div class="orgcom-name">To Be Announced</div>
+          <div class="orgcom-dept">IIT Indore</div>
+        </div>
+        <div class="orgcom-card orgcom-card--placeholder">
+          <div class="orgcom-avatar">?</div>
+          <div class="orgcom-name">To Be Announced</div>
+          <div class="orgcom-dept">IIT Indore</div>
         </div>
       </div>
     </div>
   </div>
-  
+
   <!-- ══ FOOTER ══ -->
   <footer class="footer">
     <div class="container">
@@ -652,7 +703,7 @@
             <li><a href="#reach">How to Reach</a></li>
             <li><a href="#sponsors">Sponsors</a></li>
             <li><a href="#contact">Contact</a></li>
-            <li><a href="https://iiti.ac.in" target="_blank">IIT Indore</a></li>
+            <li><a href="https://www.iiti.ac.in" target="_blank">IIT Indore</a></li>
           </ul>
         </div>
 
