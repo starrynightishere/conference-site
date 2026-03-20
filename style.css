@@ -101,11 +101,9 @@
     /* Parallax background layer */
     .hero::after {
       content: '';
-      position: absolute; inset: -30% 0;
+      position: absolute; inset: -20% 0;
       background: url('images/iiti_campus_bg.png') center 40% / cover no-repeat;
       z-index: 0;
-      will-change: transform;
-      transform: translateY(var(--parallax-y, 0px));
     }
     /* Gradient overlay for text readability — dark on left, transparent on right */
     .hero::before {
