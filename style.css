@@ -445,7 +445,8 @@
     .orgcom-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, 220px);
-      gap: 16px;
+      gap: 30px;
+      justify-content: center;
     }
 
     .orgcom-card {
@@ -463,6 +464,21 @@
     .orgcom-name { font-size: 13px; font-weight: 600; color: var(--text); margin: 10px 10px 3px; }
     .orgcom-role { font-size: 11px; font-weight: 500; color: var(--blue); margin: 0 10px 3px; }
     .orgcom-dept { font-size: 10px; color: var(--text-muted); line-height: 1.4; margin: 0 10px 12px; }
+
+    /* ── MINISYMPOSIUM ── */
+    .ms-layout {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start;
+    }
+    @media (max-width: 700px) { .ms-layout { grid-template-columns: 1fr; } }
+    .ms-steps-list { display: flex; flex-direction: column; gap: 18px; }
+    .ms-step       { display: flex; gap: 16px; align-items: flex-start; }
+    .ms-step-num {
+      font-family: 'Lexend', sans-serif; font-size: 22px; font-weight: 700;
+      color: var(--blue); opacity: 0.25;
+      min-width: 36px; line-height: 1.2; flex-shrink: 0;
+    }
+    .ms-step h4 { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+    .ms-step p  { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
 
     /* ── UTILITY ── */
     .text-center { text-align: center; }
