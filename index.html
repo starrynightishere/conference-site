@@ -9,8 +9,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <script src="scripts.js" defer></script>
 </head>
+<body>
 
   <!-- ══ NAVBAR ══ -->
   <nav class="navbar">  
@@ -23,6 +23,15 @@
       </button>
       <ul class="nav-links" id="navLinks">
         <li><a href="#about"    class="active">Home</a></li>
+        <li class="nav-dropdown">
+          <a href="#" class="dropdown-toggle" onclick="toggleDropdown(event)" aria-expanded="false" aria-haspopup="true">Committee ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="#" onclick="openCommitteeModal('patron');return false;">Patron</a></li>
+            <li><a href="#" onclick="openCommitteeModal('convener');return false;">Convener</a></li>
+            <li><a href="#" onclick="openCommitteeModal('coconvener');return false;">Co-Convener</a></li>
+            <li><a href="#" onclick="openCommitteeModal('local');return false;">Local Organising Team</a></li>
+          </ul>
+        </li>
         <li><a href="#dates">Dates</a></li>
         <li><a href="#topics">Topics</a></li>
         <li><a href="#speakers">Speakers</a></li>
@@ -49,8 +58,8 @@
       </div>
       <div class="hero-stats">
         <div class="stat"><div class="stat-num">3</div><div class="stat-lbl">Conference Days</div></div>
-        <div class="stat"><div class="stat-num">200+</div><div class="stat-lbl">Expected Participants</div></div>
-        <div class="stat"><div class="stat-num">10+</div><div class="stat-lbl">Keynote Speakers</div></div>
+        <div class="stat"><div class="stat-num">500+</div><div class="stat-lbl">Expected Participants</div></div>
+        <div class="stat"><div class="stat-num">20+</div><div class="stat-lbl">Keynote Speakers</div></div>
         <div class="stat"><div class="stat-num">Scopus</div><div class="stat-lbl">Indexed Proceedings</div></div>
       </div>
     </div>
@@ -443,7 +452,7 @@
         <div class="contact-card">
           <div class="cc-icon">📧</div>
           <h4>Email</h4>
-          <p><a href="mailto:icamm2026@iiti.ac.in">icamm2026@iiti.ac.in</a></p>
+          <p><a href="/cdn-cgi/l/email-protection#076e64666a6a35373531476e6e736e296664296e69"><span class="__cf_email__" data-cfemail="274e44464a4a15171511674e4e534e094644094e49">[email&#160;protected]</span></a></p>
         </div>
         <div class="contact-card">
           <div class="cc-icon">📍</div>
@@ -458,6 +467,99 @@
       </div>
     </div>
   </section>
+
+  <!-- ══ ORGANISING COMMITTEE MODAL ══ -->
+  <div class="orgcom-overlay" id="orgcomOverlay" onclick="closeCommitteeModal()"></div>
+  <div class="orgcom-modal" id="orgcomModal" role="dialog" aria-modal="true" aria-labelledby="orgcomTitle">
+    <button class="orgcom-close" onclick="closeCommitteeModal()" aria-label="Close">✕</button>
+    <div class="orgcom-tabs">
+      <button class="orgcom-tab active" data-tab="patron"     onclick="switchTab(this,'patron')">Patron</button>
+      <button class="orgcom-tab"         data-tab="convener"   onclick="switchTab(this,'convener')">Convener</button>
+      <button class="orgcom-tab"         data-tab="coconvener" onclick="switchTab(this,'coconvener')">Co-Convener</button>
+      <button class="orgcom-tab"         data-tab="local"      onclick="switchTab(this,'local')">Local Organising Team</button>
+    </div>
+    <!-- Patron -->
+    <div class="orgcom-panel active" id="panel-patron">
+      <div class="orgcom-section-label">Patron</div>
+      <div class="orgcom-grid">
+        <div class="orgcom-card">
+          <img class="orgcom-avatar" src="images/suhas_s_joshi.png" alt="Prof. Suhas Joshi" onerror="this.outerHTML='<div class=\'orgcom-avatar\'>SJ</div>'">
+          <div class="orgcom-name">Prof. Suhas Joshi</div>
+          <div class="orgcom-role">Director, IIT Indore</div>
+          <div class="orgcom-dept">Indian Institute of Technology Indore</div>
+        </div>
+      </div>
+    </div>
+    <!-- Convener -->
+    <div class="orgcom-panel" id="panel-convener">
+      <div class="orgcom-section-label">Convener</div>
+      <div class="orgcom-grid">
+        <div class="orgcom-card">
+          <div class="orgcom-name">Prof. B</div>
+          <div class="orgcom-role">Convener, ICAMM 2026</div>
+          <div class="orgcom-dept">Dept. of Mathematics, IIT Indore</div>
+        </div>
+      </div>
+    </div>
+    <!-- Co-Convener -->
+    <div class="orgcom-panel" id="panel-coconvener">
+      <div class="orgcom-section-label">Co-Convener</div>
+      <div class="orgcom-grid">
+        <div class="orgcom-card">
+          <div class="orgcom-name">Prof. A</div>
+          <div class="orgcom-role">Co-Convener, ICAMM 2026</div>
+          <div class="orgcom-dept">Dept. of Mathematics, IIT Indore</div>
+        </div>
+        <div class="orgcom-card">
+          <div class="orgcom-name">Prof. A</div>
+          <div class="orgcom-role">Co-Convener, ICAMM 2026</div>
+          <div class="orgcom-dept">Dept. of Mathematics, IIT Indore</div>
+        </div>
+      </div>
+    </div>
+    <!-- Local Organising Team -->
+    <div class="orgcom-panel" id="panel-local">
+      <div class="orgcom-section-label">Local Organising Team</div>
+      <div class="orgcom-grid">
+        <div class="orgcom-card">
+          <img class="orgcom-avatar" src="images/vinay_k_gupta.jpg" alt="Prof. Vinay Gupta" onerror="this.outerHTML='<div class=\'orgcom-avatar\'>VG</div>'">
+          <div class="orgcom-name">Dr. Vinay Kumar Gupta</div>
+          <div class="orgcom-role">Member</div>
+          <div class="orgcom-dept">Dept. of Mathematics, IIT Indore</div>
+        </div>
+        <div class="orgcom-card">
+          <img class="orgcom-avatar" src="images/sandeep_c.jpeg" alt="Dr. Sandeep Chaudhary" onerror="this.outerHTML='<div class=\'orgcom-avatar\'>SS</div>'">
+          <div class="orgcom-name">Dr. Sandeep Chaudhary</div>
+          <div class="orgcom-role">Member</div>
+          <div class="orgcom-dept">Dept. of Civil Engineering, IIT Indore</div>
+        </div>
+        <div class="orgcom-card">
+          <img class="orgcom-avatar" src="images/santanu_m.jpeg" alt="Dr. Santanu Manna" onerror="this.outerHTML='<div class=\'orgcom-avatar\'>SM</div>'">
+          <div class="orgcom-name">Dr. Santanu Manna</div>
+          <div class="orgcom-role">Member</div>
+          <div class="orgcom-dept">Dept. of Mathematics, IIT Indore</div>
+        </div>
+        <div class="orgcom-card">
+          <img class="orgcom-avatar" src="images/parimal_kar.jpg" alt="Dr. Parimal Kar" onerror="this.outerHTML='<div class=\'orgcom-avatar\'>PK</div>'">
+          <div class="orgcom-name">Dr. Parimal Kar</div>
+          <div class="orgcom-role">Member</div>
+          <div class="orgcom-dept">Dept. of Biosciences and Biomedical Engineering, IIT Indore</div>
+        </div>
+        <div class="orgcom-card">
+          <img class="orgcom-avatar" src="images/abhirup_d.jpeg" alt="Dr. Abhirup Datta" onerror="this.outerHTML='<div class=\'orgcom-avatar\'>AK</div>'">
+          <div class="orgcom-name">Dr. Abhirup Datta</div>
+          <div class="orgcom-role">Member</div>
+          <div class="orgcom-dept">Dept. of Astronomy, Astrophysics and Space Engineering, IIT Indore</div>
+        </div>
+        <div class="orgcom-card">
+          <img class="orgcom-avatar" src="images/aman_k.jpeg" alt="Dr. Aman Khuran" onerror="this.outerHTML='<div class=\'orgcom-avatar\'>AK</div>'">
+          <div class="orgcom-name">Dr. Aman Khurana</div>
+          <div class="orgcom-role">Member</div>
+          <div class="orgcom-dept">Dept. of Mechanical Engineering, IIT Indore</div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- ══ FOOTER ══ -->
   <footer class="footer">
@@ -491,11 +593,10 @@
       </div>
       <div class="footer-bottom">
         <span>© 2026 ICAMM – Indian Institute of Technology Indore. All rights reserved.</span>
-        <span>Conference language: English</span>
       </div>
     </div>
   </footer>
 
+  <script src="scripts.js"></script>
 </body>
-
 </html>
